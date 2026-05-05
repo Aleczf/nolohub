@@ -1,0 +1,260 @@
+/* ============================================================
+   NOLO VAULT — Design tokens
+   Editorial media verticale per il mondo NoLo premium.
+   Filosofia: typographic scale contrast estremo,
+   un solo colore di accento (arancio bruciato) su campo avorio.
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=DM+Sans:wght@400;500;700&display=swap");
+
+:root {
+  /* ---------- COLORI ---------- */
+  /* Sfondo dominante — avorio caldo, carta non patinata. NON bianco. */
+  --nv-paper:        #F5F2ED;
+  --nv-paper-deep:   #ECE7DE;   /* secondo piano, separatori delicati */
+  --nv-paper-edge:   #E2DCD0;   /* hairline su sfondo paper */
+
+  /* Inchiostro — quasi nero, caldo. */
+  --nv-ink:          #1A1A18;
+  --nv-ink-soft:     #4A4A46;   /* corpo secondario, kicker neutro */
+  --nv-ink-mute:     #8A8780;   /* meta, caption, label */
+
+  /* Accento unico — arancio bruciato. Niente altro ha colore. */
+  --nv-accent:       #C4531A;
+  --nv-accent-deep:  #9E3F12;   /* hover/press, score nel database */
+  --nv-accent-tint:  #E8C8B2;   /* bg sottile, bordi stato “vault pick” */
+
+  /* Inversione — blocco database, footer, hero scuri. */
+  --nv-ink-bg:       #1A1A18;
+  --nv-ink-bg-2:     #242420;
+  --nv-ink-fg:       #F5F2ED;
+  --nv-ink-fg-mute:  #B8B5AE;
+  --nv-ink-rule:     #3A3A35;
+
+  /* Stato — usati con parsimonia, mai colorati. */
+  --nv-rule:         #1A1A18;     /* bordo netto 1px */
+  --nv-rule-soft:    #C9C3B6;     /* hairline tra blocchi */
+  --nv-focus:        #C4531A;
+
+  /* ---------- FAMIGLIE ---------- */
+  --nv-font-display: "Barlow Condensed", "Oswald", "Helvetica Neue Condensed", Impact, sans-serif;
+  --nv-font-body:    "DM Sans", -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --nv-font-mono:    "JetBrains Mono", "IBM Plex Mono", "SF Mono", Menlo, monospace;
+
+  /* ---------- SCALA TIPOGRAFICA — contrasto estremo ----------
+     Niente gradazioni intermedie timide.
+     Display 60–100px convive con caption 10–11px.
+  */
+  --nv-fs-monument: clamp(64px, 9vw, 128px);   /* nome testata, score hero */
+  --nv-fs-display:  clamp(48px, 6.5vw, 96px);  /* hero headline */
+  --nv-fs-headline: clamp(36px, 4vw, 60px);    /* section headline */
+  --nv-fs-title:    28px;                      /* article title */
+  --nv-fs-lede:     20px;                      /* standfirst, lede */
+  --nv-fs-body:     17px;                      /* corpo articolo */
+  --nv-fs-ui:       15px;                      /* UI, link */
+  --nv-fs-meta:     13px;                      /* byline, meta */
+  --nv-fs-caption:  11px;                      /* caption, kicker */
+  --nv-fs-micro:    10px;                      /* legalese, badge */
+
+  /* Score numerico — elemento identitario, trattato come display. */
+  --nv-fs-score:    clamp(72px, 10vw, 144px);
+  --nv-fs-score-sm: 48px;                      /* nelle liste database */
+
+  /* ---------- LINE HEIGHT / TRACKING ---------- */
+  --nv-lh-display:  0.92;
+  --nv-lh-headline: 1.02;
+  --nv-lh-title:    1.12;
+  --nv-lh-body:     1.55;
+  --nv-lh-ui:       1.4;
+
+  --nv-tr-display:  -0.02em;     /* leggermente negativo sui titoli */
+  --nv-tr-headline: -0.015em;
+  --nv-tr-body:     0;
+  --nv-tr-kicker:   0.14em;      /* kicker uppercase */
+  --nv-tr-caption:  0.06em;
+
+  /* ---------- LAYOUT ---------- */
+  --nv-rule-width:   1px;
+  --nv-radius:       2px;        /* MAX 2–4px. Niente di più. */
+  --nv-radius-lg:    4px;
+
+  --nv-grid-gutter:  24px;
+  --nv-page-pad:     clamp(20px, 4vw, 56px);
+  --nv-page-max:     1440px;
+
+  /* ---------- SPACING (4px base) ---------- */
+  --nv-s-1:  4px;
+  --nv-s-2:  8px;
+  --nv-s-3:  12px;
+  --nv-s-4:  16px;
+  --nv-s-5:  24px;
+  --nv-s-6:  32px;
+  --nv-s-7:  48px;
+  --nv-s-8:  64px;
+  --nv-s-9:  96px;
+  --nv-s-10: 128px;
+}
+
+/* ============================================================
+   SEMANTIC RESET — applicato ai tag nudi.
+   Volontariamente opinionato: questo file è il foglio di stile
+   editoriale, non un reset generico.
+   ============================================================ */
+
+html, body {
+  background: var(--nv-paper);
+  color: var(--nv-ink);
+  font-family: var(--nv-font-body);
+  font-size: var(--nv-fs-body);
+  line-height: var(--nv-lh-body);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* DISPLAY — hero, monumenti, score */
+.nv-monument {
+  font-family: var(--nv-font-display);
+  font-weight: 800;
+  font-size: var(--nv-fs-monument);
+  line-height: var(--nv-lh-display);
+  letter-spacing: var(--nv-tr-display);
+  text-transform: uppercase;
+}
+
+.nv-display, h1 {
+  font-family: var(--nv-font-display);
+  font-weight: 800;
+  font-size: var(--nv-fs-display);
+  line-height: var(--nv-lh-display);
+  letter-spacing: var(--nv-tr-display);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.nv-headline, h2 {
+  font-family: var(--nv-font-display);
+  font-weight: 800;
+  font-size: var(--nv-fs-headline);
+  line-height: var(--nv-lh-headline);
+  letter-spacing: var(--nv-tr-headline);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.nv-title, h3 {
+  font-family: var(--nv-font-body);
+  font-weight: 500;
+  font-size: var(--nv-fs-title);
+  line-height: var(--nv-lh-title);
+  letter-spacing: -0.005em;
+  margin: 0;
+}
+
+/* LEDE / standfirst — sempre body, mai uppercase */
+.nv-lede {
+  font-family: var(--nv-font-body);
+  font-weight: 400;
+  font-size: var(--nv-fs-lede);
+  line-height: 1.45;
+  color: var(--nv-ink-soft);
+}
+
+/* BODY */
+p, .nv-body {
+  font-size: var(--nv-fs-body);
+  line-height: var(--nv-lh-body);
+  margin: 0 0 var(--nv-s-4) 0;
+  text-wrap: pretty;
+}
+
+/* KICKER — etichetta uppercase, accento arancio */
+.nv-kicker {
+  font-family: var(--nv-font-body);
+  font-weight: 500;
+  font-size: var(--nv-fs-caption);
+  line-height: 1;
+  letter-spacing: var(--nv-tr-kicker);
+  text-transform: uppercase;
+  color: var(--nv-accent);
+}
+
+/* META — byline, data, tempo lettura */
+.nv-meta {
+  font-family: var(--nv-font-body);
+  font-weight: 400;
+  font-size: var(--nv-fs-meta);
+  line-height: 1.4;
+  color: var(--nv-ink-mute);
+  letter-spacing: var(--nv-tr-caption);
+}
+
+/* CAPTION — descrizioni immagini */
+.nv-caption {
+  font-family: var(--nv-font-body);
+  font-weight: 400;
+  font-size: var(--nv-fs-caption);
+  line-height: 1.45;
+  color: var(--nv-ink-mute);
+  letter-spacing: var(--nv-tr-caption);
+}
+
+/* SCORE — trattato come display, non come dato */
+.nv-score {
+  font-family: var(--nv-font-display);
+  font-weight: 800;
+  font-size: var(--nv-fs-score);
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  color: var(--nv-accent);
+  font-variant-numeric: tabular-nums lining-nums;
+  display: inline-block;
+}
+
+.nv-score--sm {
+  font-size: var(--nv-fs-score-sm);
+}
+
+/* LINK — underline come default, scompare in hover */
+a, .nv-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--nv-rule-soft);
+  transition: text-decoration-color 120ms ease;
+}
+a:hover, .nv-link:hover {
+  text-decoration-color: var(--nv-accent);
+  color: var(--nv-accent);
+}
+
+/* RULE — bordo netto, mai card con ombra */
+.nv-rule {
+  border: 0;
+  border-top: var(--nv-rule-width) solid var(--nv-rule);
+  margin: 0;
+}
+.nv-rule--soft { border-top-color: var(--nv-rule-soft); }
+
+/* INVERSIONE — blocco database, footer */
+.nv-invert {
+  background: var(--nv-ink-bg);
+  color: var(--nv-ink-fg);
+}
+.nv-invert .nv-meta,
+.nv-invert .nv-caption { color: var(--nv-ink-fg-mute); }
+.nv-invert .nv-rule { border-top-color: var(--nv-ink-rule); }
+.nv-invert a:hover { color: var(--nv-accent); }
+
+/* SELECTION */
+::selection {
+  background: var(--nv-accent);
+  color: var(--nv-paper);
+}
+
+/* FOCUS — visibile, mai rimosso */
+:focus-visible {
+  outline: 2px solid var(--nv-focus);
+  outline-offset: 2px;
+}
