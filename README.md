@@ -49,6 +49,7 @@ Doppio, e il sito deve parlare a entrambi senza che si accorgano di condividere 
 | Riferimenti visivi citati         | Zero.eu, RollingWine, Apartamento, Guardian Long Reads, Pitchfork.       |
 
 > **CAVEAT** — non avendo trovato codice nel repo, l'identità visiva è stata derivata interamente dal brief. Le UI kit qui dentro sono **proposte**, non recreations: appena Alessandro pubblica il primo commit possiamo iterare contro il codice reale.
+> 
 
 ---
 
